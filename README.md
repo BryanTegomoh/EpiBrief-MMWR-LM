@@ -2,14 +2,15 @@
 
 **A Specialized Language Model for CDC-Style Epidemiological Reasoning**
 
-[![Live Demo](https://img.shields.io/badge/🤗-Live%20Demo-blue)](https://huggingface.co/spaces/BryanTegomoh/EpiBrief-MMWR-LM)
-[![Paper](https://img.shields.io/badge/📄-Paper-green)](MANUSCRIPT_EpiBrief_MMWR_LM.md)
-[![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
+[![Live Demo](https://img.shields.io/badge/🤗_Live_Demo-blue?style=for-the-badge)](https://huggingface.co/spaces/BryanTegomoh/EpiBrief-MMWR-LM)
+[![Model](https://img.shields.io/badge/🤗_Model-orange?style=for-the-badge)](https://huggingface.co/BryanTegomoh/EpiBrief-MMWR-LM)
+[![Paper](https://img.shields.io/badge/📄_Paper-green?style=for-the-badge)](MANUSCRIPT_EpiBrief_MMWR_LM.md)
+[![License](https://img.shields.io/badge/License-Apache_2.0-yellow?style=for-the-badge)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)](https://www.python.org/)
 
 > Fine-tuned Llama 3.1 8B on 11,632 instruction-response pairs from 9 years of CDC's Morbidity and Mortality Weekly Reports (2016-2025) to teach AI systems epidemiological reasoning patterns.
 
-**Try it now:** [Live Demo →](https://huggingface.co/spaces/BryanTegomoh/EpiBrief-MMWR-LM)
+**🚀 Try it now:** [Live Demo →](https://huggingface.co/spaces/BryanTegomoh/EpiBrief-MMWR-LM) | **📦 Download Model:** [HuggingFace Hub →](https://huggingface.co/BryanTegomoh/EpiBrief-MMWR-LM)
 
 ---
 
@@ -52,7 +53,32 @@ MMR vaccination for all eligible children and adults.
 ### Try the Live Demo (No Installation)
 **→ [huggingface.co/spaces/BryanTegomoh/EpiBrief-MMWR-LM](https://huggingface.co/spaces/BryanTegomoh/EpiBrief-MMWR-LM)**
 
-### Run Locally
+### Use Pre-trained Model (Recommended)
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import PeftModel
+import torch
+
+# Load base model
+base_model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-3.1-8B",
+    torch_dtype=torch.bfloat16,
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B")
+
+# Load EpiBrief LoRA adapter
+model = PeftModel.from_pretrained(base_model, "BryanTegomoh/EpiBrief-MMWR-LM")
+
+# Generate
+prompt = "During January 2024, 47 measles cases were reported in Minnesota..."
+inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+outputs = model.generate(**inputs, max_new_tokens=400, temperature=0.7)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
+
+### Run From Source
 
 ```bash
 # Clone the repository
@@ -245,7 +271,7 @@ Apache License 2.0 - See [LICENSE](LICENSE)
 ## 🔗 Links
 
 - **🤗 Live Demo:** [huggingface.co/spaces/BryanTegomoh/EpiBrief-MMWR-LM](https://huggingface.co/spaces/BryanTegomoh/EpiBrief-MMWR-LM)
-- **📦 Model Weights:** Coming soon to Hugging Face Hub
+- **📦 Model Weights:** [huggingface.co/BryanTegomoh/EpiBrief-MMWR-LM](https://huggingface.co/BryanTegomoh/EpiBrief-MMWR-LM)
 - **📄 Full Paper:** [MANUSCRIPT_EpiBrief_MMWR_LM.md](MANUSCRIPT_EpiBrief_MMWR_LM.md)
 - **📚 Documentation:** [docs/](docs/)
 
