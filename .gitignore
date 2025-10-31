@@ -67,3 +67,9 @@ build/
 .env
 config.local.py
 credentials.json
+
+# Claude Code
+.claude/
+
+# Third-party repos (install as dependencies instead)
+tinker-cookbook/
