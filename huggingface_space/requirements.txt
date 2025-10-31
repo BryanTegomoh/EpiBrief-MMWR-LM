@@ -1,0 +1,5 @@
+gradio==4.44.0
+tinker-ai
+tinker-cookbook
+torch>=2.0.0
+transformers>=4.40.0

@@ -1,31 +1,19 @@
-# EpiBrief-MMWR-LM Dataset Construction Requirements
-
-# Web scraping
-requests>=2.31.0
+# Core dependencies
 beautifulsoup4>=4.12.0
 lxml>=4.9.0
-
-# Data processing
-pandas>=2.1.0
-numpy>=1.24.0
-
-# Progress tracking
+requests>=2.31.0
 tqdm>=4.66.0
 
-# Data validation
-jsonschema>=4.19.0
+# Training and inference
+torch>=2.0.0
+transformers>=4.40.0
+peft>=0.10.0
+tinker-ai
+tinker-cookbook
 
-# Visualization (for dataset statistics)
-matplotlib>=3.7.0
-seaborn>=0.12.0
+# Web interface
+gradio>=4.44.0
 
-# PDF handling (if needed for older articles)
-PyPDF2>=3.0.0
-pdfminer.six>=20221105
-
-# Text processing
-nltk>=3.8.0
-spacy>=3.6.0
-
-# Utilities
-python-dateutil>=2.8.0
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
