@@ -1,0 +1,19 @@
+# HuggingFace Space specific ignores
+# We ALLOW model weights here (unlike the main repo)
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local testing only
+.env.local
+scratch/

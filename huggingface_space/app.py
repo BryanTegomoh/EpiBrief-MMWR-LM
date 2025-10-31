@@ -12,12 +12,19 @@ import os
 # Check if running on Hugging Face Spaces
 IS_SPACES = os.environ.get("SPACE_ID") is not None
 
-if IS_SPACES:
-    # On Hugging Face, connect to your Tinker checkpoint
-    import tinker
-    from tinker import types
-    from tinker_cookbook import renderers, model_info
-    from tinker_cookbook.tokenizer_utils import get_tokenizer
+# Try to import tinker (only works if API key is set)
+HAS_TINKER = False
+try:
+    if not IS_SPACES:  # Only try importing locally, not on HF Spaces
+        import tinker
+        from tinker import types
+        from tinker_cookbook import renderers, model_info
+        from tinker_cookbook.tokenizer_utils import get_tokenizer
+        HAS_TINKER = True
+except ImportError:
+    pass
+
+if HAS_TINKER:
 
     TRAINING_RUN_ID = "dee4e48d-4e45-42d9-9371-a997dac170fd"
     CHECKPOINT_PATH = f"tinker://{TRAINING_RUN_ID}/sampler_weights/final"

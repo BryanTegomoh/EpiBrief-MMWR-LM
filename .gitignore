@@ -63,10 +63,62 @@ build/
 *.json.backup
 .dataset_cache/
 
+# Model weights and checkpoints (too large for git)
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.msgpack
+*.onnx
+*.tflite
+*.pb
+models/
+checkpoints/
+weights/
+model_cache/
+.cache/
+huggingface/
+wandb/
+mlruns/
+
+# Experiment tracking
+experiments/
+outputs/
+results/
+runs/
+
+# Large datasets and embeddings
+*.npy
+*.npz
+*.csv
+*.parquet
+*.feather
+*.arrow
+
+# API keys and sensitive data
+*.key
+*.pem
+*.cert
+*.token
+api_keys.txt
+secrets/
+
 # Secrets
 .env
+.env.local
+.env.*.local
 config.local.py
 credentials.json
+
+# Personal notes and scratch files
+NOTES.md
+TODO.personal.md
+scratch/
 
 # Claude Code
 .claude/
