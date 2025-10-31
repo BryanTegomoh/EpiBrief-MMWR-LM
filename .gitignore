@@ -125,3 +125,19 @@ scratch/
 
 # Third-party repos (install as dependencies instead)
 tinker-cookbook/
+
+# Internal development documentation (removed from public repo)
+BUGFIX_SUMMARY.md
+DEPLOYMENT_CHECKLIST.md
+HTML_STRUCTURE_ANALYSIS.md
+MODEL_SELECTION_ANALYSIS.md
+MULTIMODAL_STRATEGY.md
+PROJECT_SUMMARY.md
+PROJECT_VISION.md
+QUICKSTART.md
+QUICK_START.md
+README_OLD.md
+READY_TO_TRAIN_CHECKLIST.md
+REVIEW_RESPONSE.md
+TINKER_SETUP_GUIDE.md
+TRAINING_EXECUTION_GUIDE.md

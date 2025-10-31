@@ -10,39 +10,35 @@ pinned: false
 license: apache-2.0
 ---
 
-# EpiBrief-MMWR-LM: AI Epidemiologist
+# EpiBrief-MMWR-LM
 
-**Specialized language model trained on 11,632 CDC MMWR training pairs**
+Specialized language model for CDC-style epidemiological reasoning, trained on 11,632 instruction-response pairs from CDC's Morbidity and Mortality Weekly Reports (2016-2025).
 
-This AI assistant learned epidemiological reasoning from 9 years of CDC's Morbidity and Mortality Weekly Reports (2016-2025). It can:
+## Capabilities
 
-- Generate CDC-style outbreak summaries
+- Generate outbreak summaries in CDC style
 - Interpret surveillance data quantitatively
 - Provide evidence-based public health recommendations
-- Analyze epidemiological patterns across demographics and time
+- Analyze epidemiological patterns
 
 ## Model Details
 
 - **Base Model:** Meta-Llama 3.1 8B
 - **Fine-tuning:** LoRA (rank 32, alpha 64)
-- **Training Data:** 11,632 instruction-response pairs from CDC MMWR articles
-- **Quantitative Focus:** 85% of training pairs emphasize numerical reasoning
-- **Training Duration:** ~8 hours on distributed GPU infrastructure
+- **Training Data:** 11,632 pairs from CDC MMWR articles
+- **Quantitative Focus:** 85% of training emphasizes numerical reasoning
+- **Training Duration:** ~8 hours on distributed GPU
 
-## Deployment Notes
+## Notes
 
-This HuggingFace Space includes model weights via Git LFS, which are excluded from the main GitHub repository. To deploy:
+Model weights are stored in this Space via Git LFS. The main codebase is at [github.com/BryanTegomoh/EpiBrief-MMWR-LM](https://github.com/BryanTegomoh/EpiBrief-MMWR-LM).
 
-1. Model weights (*.safetensors, *.bin, etc.) are stored in this Space using Git LFS
-2. The main GitHub repo at [BryanTegomoh/EpiBrief-MMWR-LM](https://github.com/BryanTegomoh/EpiBrief-MMWR-LM) contains only the code and documentation
-3. Users can access the model through this Space or download weights separately
-
-## Developer
+## Author
 
 **Bryan Tegomoh, MD, MPH**
-Physician & Epidemiologist
-📧 bryan.tegomoh@berkeley.edu
-🔗 [LinkedIn](http://www.BryanTegomoh.com) | [GitHub](https://github.com/BryanTegomoh/EpiBrief-MMWR-LM)
+Physician and Epidemiologist
+
+[GitHub](https://github.com/BryanTegomoh/EpiBrief-MMWR-LM) | [LinkedIn](http://www.BryanTegomoh.com)
 
 ## Citation
 
