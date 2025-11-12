@@ -1,2 +1,5 @@
 gradio==5.7.1
 huggingface_hub==0.26.2
+tinker-ai
+tinker-cookbook
+transformers>=4.30.0
