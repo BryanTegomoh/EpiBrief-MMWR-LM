@@ -141,3 +141,28 @@ READY_TO_TRAIN_CHECKLIST.md
 REVIEW_RESPONSE.md
 TINKER_SETUP_GUIDE.md
 TRAINING_EXECUTION_GUIDE.md
+
+# New improvement/evaluation documentation (development only)
+EVALUATION_IMPROVEMENTS.md
+EVAL_FRAMEWORK_SUMMARY.md
+IMPROVEMENTS.md
+QUICK_IMPROVEMENTS_SUMMARY.md
+QUICK_START_RAG.md
+RAG_IMPLEMENTATION_SUMMARY.md
+RAG_SYSTEM_README.md
+
+# Backup/alternative app versions (keep only main app.py)
+huggingface_space/app_improved.py
+huggingface_space/app_original.py
+huggingface_space/app_rag_enhanced.py
+huggingface_space/app_standalone.py
+huggingface_space/app_tinker_version.py
+
+# Experimental/test scripts (development only)
+scripts/test_improved_inference.py
+scripts/test_rag_temporal.py
+rag_system.py
+requirements_rag.txt
+
+# Evaluation experiments (too large/experimental for public repo)
+eval/
