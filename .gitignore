@@ -166,3 +166,13 @@ requirements_rag.txt
 
 # Evaluation experiments (too large/experimental for public repo)
 eval/
+
+# Temporary/duplicate scripts (prevent clutter)
+scripts/test_*.py
+scripts/check_*.py
+scripts/*_NOW.py
+scripts/*_fixed.py
+scripts/*_ENHANCED.py
+scripts/web_*.py
+scripts/download_*.py
+scripts/*_build_*.py
